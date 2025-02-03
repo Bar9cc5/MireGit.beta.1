@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>MireGit</title>
+</head>
+<body>
+    <header>
+        <h1>Mire<span>Git</span></h1>
+        <nav>
+            <ul>
+                <li><a href="#mire-content">Курсы</a></li>
+                <li><a href="#">О нас</a></li>
+                <li><a href="#">Контакты</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h2>Изучайте языки, географию с удовольствием!</h2>
+            <p>Присоединяйтесь к нашим увлекательным курсам и откройте для себя мир знаний. Мы предлагаем интерактивные уроки, которые помогут вам освоить новые навыки.</p>
+            <a href="#mire-content">Начать изучать</a>
+            <h2>Контактная информация</h2>
+            <button id="contactBtn" class="btn">Показать контакты</button>
+            <div id="contactModal" class="modal">
+                <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <h2>Контакты</h2>
+                    <p>Телеграмм разработчика: <a href="https://t.me/meiltton" target="_blank">написать</a></p>
+                    <p>Email: MEILTTON@yandex.ru</p>
+                    <p>Адрес: г. Москва</p>
+                </div>
+            </div>
+        </div>
+        <img src="images/hero-image.jpg" alt="Изучение языков" class="hero-image" />
+        <p>Время учиться=)</p>
+    </section>
+
+    <section class="mire-content" id="mire-content">
+        <!-- Раздел для языковых курсов -->
+        <div class="tile">
+            <img src="Images/english.jpg" alt="Английский">
+            <div class="text-container">
+                <h3>Английский</h3>
+                <p>Изучайте английский язык бесплатно с интерактивными уроками, видео и заданиями. Общайтесь с носителями и развивайте свои навыки!</p>
+                <a href="#">Перейти к курсам</a>
+            </div>
+        </div>
+
+        <div class="tile">
+            <img src="images/spanish.jpg" alt="Испанский">
+            <div class="text-container">
+                <h3>Испанский</h3>
+                <P>Изучайте испанский язык увлекательно! Погружайтесь в культуру и традиции испаноязычных стран с интерактивными уроками. Откройте новые горизонты с испанским языком!</P>
+                <a href="#">Перейти к курсам</a>
+            </div>
+        </div>
+        <div class="tile">
+            <img src="images/french.jpg" alt="Французский">
+            <div class="text-container">
+                <h3>Французский</h3>
+                <p>Изучайте французский язык — это ключ к культуре и бизнесу! Погружайтесь в интерактивные занятия, открывайте литературу, кино и музыку. Присоединяйтесь и откройте новые горизонты!</p>
+                <a href="#">Перейти к курсам</a>
+            </div>
+        </div>
+
+        <!-- Раздел для географии -->
+        <div class="tile">
+            <img src="images/geography.jpg" alt="География">
+            <div class="text-container">
+                <h3>География</h3>
+                <p>География помогает понять нашу планету, ее природные явления и культуры. Она развивает критическое мышление, миграции на общество.</p>
+                <button id="geographyBtn" class="course">Перейти к курсам</button>
+            </div>
+        </div>
+        <div id="geographyModal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2>Курсы по географии:</h2>
+                <div class="lenta-main" id="services">
+                    <h1>Выберите нужный учебник</h1>
+                    <section class="tiles-container">
+                        <!-- Здесь можно добавить дополнительные курсы -->
+                        <div class="tiles">
+                            <h2>География 9 класс</h2>
+                            <img src="images/9_class_image1.png" alt="Учебник 1">
+                            <a href="9class.geo.html">Перейти к курсу</a>
+                        </div>
+                        <div class="tiles">
+                            <h2>География 8 класс</h2>
+                            <img src="images/9_class_image2.png" alt="Учебник 2">
+                            <a href="8class.geo.html">Перейти к курсу</a>
+                        </div>
+                        <div class="tiles">
+                            <h2>География 7 класс</h2>
+                            <img src="images/9_class_image3.png" alt="Учебник 3">
+                            <a href="7class.geo.html">Перейти к курсу</a>
+                        </div>
+                        <div class="tiles">
+                            <h2>География 5-6 класс</h2>
+                            <img src="images/9_class_image4.png" alt="Учебник 4">
+                            <a href="5-6class.geo.html">Перейти к курсу</a>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+
+    </section>
+        <script>
+            // Получаем элементы модальных окон и кнопки
+            var contactModal = document.getElementById("contactModal");
+            var geographyModal = document.getElementById("geographyModal");
+            
+            var contactBtn = document.getElementById("contactBtn");
+            var geographyBtn = document.getElementById("geographyBtn");
+            
+            var closeContactBtn = contactModal.getElementsByClassName("close")[0];
+            var closeGeographyBtn = geographyModal.getElementsByClassName("close")[0];
+    
+            // Открываем модальное окно с контактами
+            contactBtn.onclick = function() {
+                contactModal.style.display = "block";
+            }
+    
+            // Открываем модальное окно с курсами по географии
+            geographyBtn.onclick = function() {
+                geographyModal.style.display = "block";
+            }
+    
+            // Закрываем модальное окно с контактами
+            closeContactBtn.onclick = function() {
+                contactModal.style.display = "none";
+            }
+    
+            // Закрываем модальное окно с курсами по географии
+            closeGeographyBtn.onclick = function() {
+                geographyModal.style.display = "none";
+            }
+    
+            // Закрываем модальные окна при клике вне их
+            window.onclick = function(event) {
+                if (event.target == contactModal) {
+                    contactModal.style.display = "none";
+                } else if (event.target == geographyModal) {
+                    geographyModal.style.display = "none";
+                }
+            }
+        </script>
+</body>
+</html>
